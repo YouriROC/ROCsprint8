@@ -1,0 +1,76 @@
+<!-- opdracht 102 -->
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <script type="text/javascript" src="formulier-events.js"></script>
+    </head>
+    <body>
+        <!-- opdracht 107 -->
+        <form name="bestelformulier" action="mailto:email@adres.nl" method="post" onsubmit="return(formcheck(this));">
+            <!-- einde opdracht 107 -->
+            <fieldset>
+                <legend>Bestelformulier</legend>
+
+                <!-- opdracht 103 -->
+                <label for="man">Man: </label>
+                <input type="radio" name="geslacht" id="man" value="m" onchange="
+                if(document.bestelformulier.man.checked == true)
+                {
+                    alert('Welkom meneer');
+                }" />
+                <label for="vrouw">Vrouw: </label>
+                <input type="radio" name="geslacht" id="vrouw" value="v" onchange="
+                if(document.bestelformulier.vrouw.checked == true)
+                { 
+                    alert('Welkom mevrouw');
+                }" />
+                <!-- einde opdracht 103 -->
+
+                <br>
+                <input required type="text" name="voornaam" placeholder="vul uw voornaam in"><br>
+                <input required type="text" name="achternaam" placeholder="vul uw achternaam in"><br>
+
+                <!-- opdracht 104 -->
+                <input required type="text" id="age" name="leeftijd" placeholder="vul uw leeftijd in" onchange="
+                var age = document.getElementById('age').value;
+                if (age < 17) {
+                    alert('Je bent leerplichtig');
+                } 
+                // opdracht 105
+                if (age > 55) {
+                    alert('Kijk ook eens naar onze senioren programma`s ');
+                }" /><br>
+                <!-- einde opdracht 104 & 105 -->
+
+
+                <input required type="text" name="woonplaats" placeholder="vul uw woonplaats in"><br>
+                <input required type="text" name="postcode" placeholder="vul uw postcode in"><br>
+                <input required type="email" name="e-mail" placeholder="vul uw E-mail in"><br>
+                <input required type="text" name="telefoon" placeholder="vul uw 06-nummer in"><br>
+                <input required type="text" name="wachtwoord" placeholder="vul uw wachtwoord in"><br>
+                <input required type="text" name="wachtwoord2" placeholder="wachtwoord opnieuw"><br>
+
+            </fieldset>
+            <fieldset>
+                <legend>Bestelling</legend>
+                <input type="checkbox" name="smartphone" value="smartphone"> Smartphone. <br>
+                <input type="checkbox" name="laptop" value="laptop"> Laptop. <br>
+                <input type="checkbox" name="tablet" value="tablet"> Tablet. <br><br>
+                <input required type="text" placeholder="dag" 
+                name="dag" id="dag" list="dagen">
+                <datalist id="dagen">
+                    <option value="Morgen"></option>
+                    <option value="Overmorgen"></option>
+                    <option value="Volgende week"></option>
+                </datalist>
+                <br><br>
+                <!-- opdracht 106 -->
+                <input type="submit" id="submit" name="submit" value="Verzenden"
+                onmouseover="style.backgroundColor='green'"
+                onmouseout="style.backgroundColor='gray'" />
+                <!-- einde opdracht 106 -->
+            </fieldset>
+            </form>
+    </body>
+</html>
+<!-- einde opdracht 102 -->
